@@ -100,9 +100,9 @@
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://118.190.132.68:3306/system_config"/>
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/system_config"/>
         <property name="username" value="root"/>
-        <property name="password" value="tiger"/>
+        <property name="password" value="root"/>
     </bean>
     <!--<bean id="MD5PasswordEncoder"-->
     <!--class="org.jasig.cas.authentication.handler.DefaultPasswordEncoder">-->
