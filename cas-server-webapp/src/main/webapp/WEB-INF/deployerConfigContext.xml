@@ -102,7 +102,7 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://127.0.0.1:3306/system_config"/>
         <property name="username" value="root"/>
-        <property name="password" value="root"/>
+        <property name="password" value="020910"/>
     </bean>
     <!--<bean id="MD5PasswordEncoder"-->
     <!--class="org.jasig.cas.authentication.handler.DefaultPasswordEncoder">-->
@@ -110,7 +110,7 @@
     <!--</bean>-->
     <bean id="ClearTextPasswordEncoder"
           class="org.jasig.cas.authentication.handler.MyPasswordEncoder">
-        <constructor-arg index="0" value="2"/>
+        <constructor-arg index="0" value="1"/>
     </bean>
 
 
