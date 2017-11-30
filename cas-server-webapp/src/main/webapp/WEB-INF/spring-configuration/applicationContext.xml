@@ -138,16 +138,22 @@
     <bean id="scheduler" class="org.jasig.cas.util.AutowiringSchedulerFactoryBean"/>
 
     <bean id="clients" class="org.pac4j.core.client.Clients">
-        <property name="callbackUrl" value="http://api.3audit.cn/cas-server/login" />
+        <property name="callbackUrl" value="http://a.b.com/cas-server/login" />
         <property name="clients">
             <list>
                 <ref bean="weiXin" />
+                <ref bean="weiXinOauth" />
             </list>
         </property>
     </bean>
     <bean id="weiXin" class="org.jasig.cas.support.pac4j.plugin.weixin.WeiXinClient">
-        <property name="key" value="yourwechatkey" />
-        <property name="secret" value="yourwechatsecret" />
+        <property name="key" value="yourkey" />
+        <property name="secret" value="yoursecret" />
+    </bean>
+
+    <bean id="weiXinOauth" class="org.jasig.cas.support.pac4j.plugin.weixin.WeiXinClientOauth">
+        <property name="key" value="yourkey" />
+        <property name="secret" value="yoursecret" />
     </bean>
 
 </beans>

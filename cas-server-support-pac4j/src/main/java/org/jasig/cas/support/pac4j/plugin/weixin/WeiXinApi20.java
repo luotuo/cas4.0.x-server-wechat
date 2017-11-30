@@ -12,8 +12,15 @@ import org.scribe.utils.OAuthEncoder;
  */
 public class WeiXinApi20 extends DefaultApi20 {
 
-    private static final String WEIXIN_AUTHORIZE_URL = "https://open.weixin.qq.com/connect/qrconnect?appid=%s&redirect_uri=%s&response_type=code&scope=snsapi_login#wechat_redirect";
+    //private static final String WEIXIN_AUTHORIZE_URL = "https://open.weixin.qq.com/connect/qrconnect?appid=%s&redirect_uri=%s&response_type=code&scope=snsapi_login#wechat_redirect";
 
+    private String url = "https://open.weixin.qq.com/connect/qrconnect?appid=%s&redirect_uri=%s&response_type=code&scope=snsapi_login&state=WeiXinClient#wechat_redirect";
+    public WeiXinApi20() {
+        super();
+    }
+    public WeiXinApi20(String authorizeUrl) {
+        this.url = authorizeUrl;
+    }
     @Override
     public AccessTokenExtractor getAccessTokenExtractor()
     {
@@ -33,6 +40,6 @@ public class WeiXinApi20 extends DefaultApi20 {
 
     @Override
     public String getAuthorizationUrl(OAuthConfig config) {
-        return String.format(WEIXIN_AUTHORIZE_URL, config.getApiKey(), OAuthEncoder.encode(config.getCallback()));
+        return String.format(url, config.getApiKey(), OAuthEncoder.encode("http://conference.3audit.com/cas-server/login"));
     }
 }

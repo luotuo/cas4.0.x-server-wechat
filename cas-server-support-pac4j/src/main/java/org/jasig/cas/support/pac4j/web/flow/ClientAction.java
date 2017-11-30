@@ -129,7 +129,8 @@ public final class ClientAction extends AbstractAction {
         final WebContext webContext = new J2EContext(request, response);
 
         // get client
-        final String clientName = request.getParameter(this.clients.getClientNameParameter());
+        //final String clientName = request.getParameter(this.clients.getClientNameParameter());
+        final String clientName = request.getParameter("state");
         //logger.debug("clientName : {}", clientName);
         logger.info("clientName : {}", clientName);
 

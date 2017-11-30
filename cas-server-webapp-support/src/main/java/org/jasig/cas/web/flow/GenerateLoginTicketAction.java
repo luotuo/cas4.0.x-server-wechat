@@ -50,7 +50,9 @@ public class GenerateLoginTicketAction {
         logger.debug("Generated login ticket {}", loginTicket);
         WebUtils.putLoginTicket(context, loginTicket);
         if (context.getRequestParameters().contains("aaa")) {
-           return "generated1";
+            return "generated1";
+        } else if (context.getRequestParameters().contains("wechat")) {
+            return "generatedWeChat";
         }
         return "generated";
     }
